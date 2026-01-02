@@ -12,5 +12,9 @@ class User(AbstractUser):
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='client')
     email = models.EmailField(unique=True)
 
+    username = None
+    USERNAME_FIELD ='email'
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'password']
+
     def __str__(self):
-        return f"{self.username} ({self.role})"
+        return f"{self.email} ({self.role})"
