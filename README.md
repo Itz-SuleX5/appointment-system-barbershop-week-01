@@ -11,9 +11,12 @@ A full-stack barber shop booking system that allows customers to book services w
 * Development DB: SQLite (Django default) — **PostgreSQL integration moved to Day 7** ✅
 * Repo structure (mono repo, atomic design) ✅
 * PR template y gitignore ✅
-* State management: Zustand (planned) 🕐
+* State management: Zustand ✅
+* Auth forms (login/register) ✅
+* Auth state management & token persistence ✅
 * Data fetching/cache: React Query (planned) 🕐
-* Auth: JWT (SimpleJWT) 🕐
+* Auth: JWT (SimpleJWT) ✅
+* Animations: Framer Motion ✅
 * Testing: Pytest (backend) / Jest + React Testing Library (frontend) 🕐
 * Containerization & Deploy: Docker / Render / Vercel (planned) 🕐
 
@@ -24,7 +27,7 @@ A full-stack barber shop booking system that allows customers to book services w
 | ORM                   | Django ORM (SQLite for dev)   | ✅  |
 | Frontend              | React (Vite or Next.js)       | ✅  |
 | Styling               | Tailwind CSS                  | ✅  |
-| Auth                  | JWT (SimpleJWT)               | 🕐 |
+| Auth                  | JWT (SimpleJWT)               | ✅ |
 | State                 | Zustand                       | 🕐 |
 | Data fetching         | React Query                   | 🕐 |
 | Testing               | Pytest / Jest + RTL           | 🕐 |
@@ -32,7 +35,7 @@ A full-stack barber shop booking system that allows customers to book services w
 
 ## Development Status & 7-Day Plan (PRD)
 * **Day 1:** Project initialization (React + Tailwind, Django + DRF, SQLite, repo structure, PR template, gitignore) — ✅ completed.
-* **Day 2:** Auth (JWT) + Login/Register UI — 🕐 in progress.
+* **Day 2:** Auth (JWT) + Login/Register UI — ✅ completed.
 * **Day 3:** Services & Barbers CRUD (API + UI) — 🕐 planned.
 * **Day 4:** Appointment model, availability validation, booking UI — 🕐 planned.
 * **Day 5:** Layout, protected routes, client dashboard — 🕐 planned.
