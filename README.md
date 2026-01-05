@@ -36,7 +36,7 @@ A full-stack barber shop booking system that allows customers to book services w
 ## Development Status & 7-Day Plan (PRD)
 * **Day 1:** Project initialization (React + Tailwind, Django + DRF, SQLite, repo structure, PR template, gitignore) — ✅ completed.
 * **Day 2:** Auth (JWT) + Login/Register UI — ✅ completed.
-* **Day 3:** Services & Barbers CRUD (API + UI) — 🕐 planned.
+* **Day 3:** Services & Barbers CRUD (API + UI) — 🕐 in process.
 * **Day 4:** Appointment model, availability validation, booking UI — 🕐 planned.
 * **Day 5:** Layout, protected routes, client dashboard — 🕐 planned.
 * **Day 6:** Admin dashboard, metrics, barber agenda — 🕐 planned.
