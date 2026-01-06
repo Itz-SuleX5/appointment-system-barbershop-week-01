@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'barbershop',
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [

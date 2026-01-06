@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Category, Service, Combo
+from .models import Category, Service, Combo, Appointment
+from users.models import User
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,3 +16,13 @@ class ComboSerializer(serializers.ModelSerializer):
     class Meta:
         model = Combo
         fields = '__all__'
+
+class AppointmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Appointment
+        fields = '__all__'
+
+class BarberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'first_name', 'last_name']
