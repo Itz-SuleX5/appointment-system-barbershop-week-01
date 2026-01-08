@@ -49,20 +49,27 @@ class ValidateAppointmentView(APIView):
         except ValueError:
             return Response({'error': 'Invalid date format. Use YYYY-MM-DD'}, status=404)
         
-        start = time (9,0)
-        end = time(14,0)
-        slots=[]
+        start = time(9, 0)
+        end = time(14, 0)
+        slots = []
         current = datetime.combine(date_obj, start)
         end_dt = datetime.combine(date_obj, end)
         while current <= end_dt:
             slots.append(current.time().strftime('%H:%M'))
             current += timedelta(minutes=30)
 
-        appointments = Appointment.objects.filter(date=date_obj)
         if barber_id:
-            appointments = appointments.filter(barber_id=barber_id)
+            appointments = Appointment.objects.filter(date=date_obj, barber_id=barber_id)
+            taken_times = set(a.time.strftime('%H:%M') for a in appointments)
+            available_slots = [slot for slot in slots if slot not in taken_times]
+        else:
+            barbers = User.objects.filter(role='barber')
+            num_barbers = barbers.count()
+            appointments = Appointment.objects.filter(date=date_obj)
+            time_counts = {}
+            for a in appointments:
+                t = a.time.strftime('%H:%M')
+                time_counts[t] = time_counts.get(t, 0) + 1
+            available_slots = [slot for slot in slots if time_counts.get(slot, 0) < num_barbers]
 
-        taken_times = set(a.time.strftime('%H:%M') for a in appointments)
-
-        available_slots = [slot for slot in slots if slot not in taken_times]
         return Response({'available_slots': available_slots})
